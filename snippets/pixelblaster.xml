@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="pixel-devices"
+          fetch="https://github.com/PixelBlaster-Devices"
+          revision="eleven" />  
+
+  <remote name="blaster"
+          fetch="https://github.com/PixelBlaster-OS/"
+          revision="refs/heads/eleven" />
+
+  <remote name="blaster-gitlab"
+          fetch="https://gitlab.com/Blaster4385"
+          revision="eleven" />
+
+  <remote name="gitlab"
+          fetch="https://gitlab.com" />
+
+  <!-- External repos -->
+  <project path="external/airbnb-lottie" name="android_external_airbnb-lottie" remote="blaster" />
+
+  <!-- Framework repos -->
+  <project path="frameworks/av" name="frameworks_av" remote="blaster" />
+  <project path="frameworks/base" name="frameworks_base" remote="blaster" />
+  <project path="frameworks/native" name="frameworks_native" remote="blaster" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="blaster" />
+
+  <!-- General repos -->
+  <project path="art" name="art" remote="blaster" />
+  <project path="bionic" name="bionic" remote="blaster" />
+  <project path="build/make" name="build" remote="blaster">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" remote="blaster" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="device/custom/sepolicy" name="device_custom_sepolicy" remote="blaster" />
+  <project path="manifest" name="manifest" remote="blaster" />
+  <project path="vendor/aosp" name="vendor_aosp" remote="blaster" />
+  <project path="vendor/support" name="vendor_support" remote="blaster" />
+
+  <!-- Hardware repos -->
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="blaster" />
+
+  <!-- Packages repos -->
+  <project path="packages/apps/AboutPhone" name="packages_apps_AboutPhone" remote="blaster" />
+  <project path="packages/apps/Explosives" name="packages_apps_Explosives" remote="blaster" />
+  <project path="packages/apps/Lawnchair" name="packages_apps_Lawnchair" remote="blaster" />
+  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="blaster" />
+  <project path="packages/apps/Plugins" name="packages_apps_Plugins" remote="blaster" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="blaster" />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="blaster" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" remote="blaster" />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="blaster" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" remote="blaster" />
+  <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="blaster" />
+
+  <!-- Prebuilts -->
+  <project path="prebuilts/sdk" name="android_prebuilts_sdk" remote="blaster-gitlab" clone-depth="1" />
+  <!-- System Repos -->
+  <project path="system/bt" name="system_bt" remote="blaster" />
+  <project path="system/core" name="system_core" remote="blaster" />
+  <project path="system/netd" name="system_netd" remote="blaster" />
+  <project path="system/nfc" name="system_nfc" remote="blaster" />
+  <project path="system/sepolicy" name="system_sepolicy" remote="blaster" />
+  
+</manifest>
